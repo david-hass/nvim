@@ -14,5 +14,6 @@ prettier.setup({
         "scss",
         "typescript",
         "yaml",
+        "vue",
     },
 })

@@ -27,6 +27,10 @@ return require('packer').startup(function(use)
 
     use('tpope/vim-fugitive')
 
+
+    use('neovim/nvim-lspconfig')
+
+
     use {
         'VonHeikemen/lsp-zero.nvim',
         branch = 'v1.x',
@@ -50,5 +54,11 @@ return require('packer').startup(function(use)
 
         }
     }
+
+    use('neovim/nvim-lspconfig')
+    use('jose-elias-alvarez/null-ls.nvim')
+    use('MunifTanjim/prettier.nvim')
+
+    use({'github/copilot.vim'})
 
 end)

@@ -13,6 +13,7 @@ vim.keymap.set("n", "N", "Nzzzv")
 vim.keymap.set("x", "<leader>p", [["_dP]])
 -- yank to sys clipboard
 vim.keymap.set({"n", "v"}, "<leader>y", [["+y]])
+vim.keymap.set({"n", "v"}, "<leader>yy", [["+yy]])
 vim.keymap.set("n", "<leader>Y", [["+Y]])
 -- we dont need Q
 vim.keymap.set("n", "Q", "<nop>")
