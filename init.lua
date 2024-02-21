@@ -1,6 +1,16 @@
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 
+
+vim.g.volar = {
+  enable = true,
+  formatters = {
+    html = {
+      enabled = false,
+    },
+  },
+}
+
 -- [[ Install `lazy.nvim` plugin manager ]]
 --    https://github.com/folke/lazy.nvim
 --    `:help lazy.nvim.txt` for more info
@@ -133,11 +143,13 @@ require('lazy').setup({
 
   {
     "alligator/accent.vim",
+    event = "VeryLazy",
     config = function()
       vim.g.accent_colour = 'red'
       vim.g.accent_darken = 0
       vim.g.accent_no_bg = 0
       vim.cmd("colorscheme accent")
+      vim.cmd('hi SignColumn guibg=NONE cterm=NONE term=NONE')
     end
   },
 
@@ -435,14 +447,21 @@ local on_attach = function(_, bufnr)
   nmap('<leader>ws', require('telescope.builtin').lsp_dynamic_workspace_symbols, '[W]orkspace [S]ymbols')
 
 
-  -- Create a command `:Format` local to the LSP buffer
+
+
+  -- local filetype = vim.api.nvim_buf_get_option(bufnr, 'filetype')
+  --  if filetype == 'vue' then
+  vim.keymap.set('n', 'Q', ':EslintFixAll<cr>', { desc = 'format with Q' })
+  -- else
   vim.api.nvim_buf_create_user_command(bufnr, 'Format', function(_)
     vim.lsp.buf.format()
   end, { desc = 'Format current buffer with LSP' })
+  --
+  --   vim.keymap.set('n', 'Q', ':Format<cr>', { desc = 'format with Q' })
+  -- end
 end
 
 
-vim.keymap.set('n', 'Q', ':Format<cr>', { desc = 'format with Q' })
 
 -- document existing key chains
 require('which-key').register {
@@ -569,6 +588,3 @@ cmp.setup {
     { name = 'path' },
   },
 }
-
--- The line beneath this is called `modeline`. See `:help modeline`
--- vim: ts=2 sts=2 sw=2 et
