@@ -14,7 +14,7 @@
   "neodev.nvim": { "branch": "main", "commit": "fdf6b3c58caf3ed1bfe40822d5dac340fc18c33b" },
   "nvim-cmp": { "branch": "main", "commit": "04e0ca376d6abdbfc8b52180f8ea236cbfddf782" },
   "nvim-lspconfig": { "branch": "master", "commit": "aa199c5bbdbb7fd28b56212a89206f13db02799e" },
-  "nvim-treesitter": { "branch": "master", "commit": "d1484a1507b36ca6af7f7925c627846010faeabe" },
+  "nvim-treesitter": { "branch": "master", "commit": "ca46eb3ac96cd96e963895004589f0c9b2a44491" },
   "nvim-treesitter-textobjects": { "branch": "master", "commit": "7f00d94543f1fd37cab2afa2e9a6cd54e1c6b9ef" },
   "plenary.nvim": { "branch": "master", "commit": "4f71c0c4a196ceb656c824a70792f3df3ce6bb6d" },
   "telescope-fzf-native.nvim": { "branch": "main", "commit": "6c921ca12321edaa773e324ef64ea301a1d0da62" },
