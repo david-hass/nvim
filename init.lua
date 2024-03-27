@@ -102,15 +102,15 @@ require('lazy').setup({
   "folke/neodev.nvim",
 
   -- theming
-  {
-    "alligator/accent.vim",
-    event = "VeryLazy",
-    config = function()
-      vim.g.accent_colour = 'red'
-      vim.g.accent_darken = 0
-      vim.g.accent_no_bg = 0
-    end
-  },
+  -- {
+  --   "alligator/accent.vim",
+  --   event = "VeryLazy",
+  --   config = function()
+  --     vim.g.accent_colour = 'red'
+  --     vim.g.accent_darken = 0
+  --     vim.g.accent_no_bg = 0
+  --   end
+  -- },
 
 }, {})
 
@@ -383,13 +383,13 @@ local on_attach = function(_, bufnr)
 
   -- local filetype = vim.api.nvim_buf_get_option(bufnr, 'filetype')
   --  if filetype == 'vue' then
-  --  vim.keymap.set('n', 'Q', ':EslintFixAll<cr>', { desc = 'format with Q' })
+  vim.keymap.set('n', 'Q', ':EslintFixAll<cr>', { desc = 'format with Q' })
   -- else
   vim.api.nvim_buf_create_user_command(bufnr, 'Format', function(_)
     vim.lsp.buf.format()
   end, { desc = 'Format current buffer with LSP' })
-  --
-  vim.keymap.set('n', 'Q', ':Format<cr>', { desc = 'format with Q' })
+
+--   vim.keymap.set('n', 'Q', ':Format<cr>', { desc = 'format with Q' })
   -- end
 end
 
@@ -428,7 +428,6 @@ require('mason-lspconfig').setup()
 --  define the property 'filetypes' to the map in question.
 local servers = {
   -- clangd = {},
-  gopls = {},
   -- pyright = {},
   -- rust_analyzer = {},
   tsserver = {},
@@ -538,5 +537,5 @@ vim.api.nvim_create_autocmd({ "CursorHold" }, {
 
 
 
-vim.cmd("colorscheme accent")
+vim.cmd("colorscheme min")
 vim.cmd('hi SignColumn guibg=NONE cterm=NONE term=NONE')
