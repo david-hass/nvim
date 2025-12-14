@@ -60,7 +60,7 @@ return {
 
 
     require("mason-lspconfig").setup({
-      ensure_installed = { "lua_ls", "ts_ls", "gopls", "clangd", "jsonls", },
+      ensure_installed = { "lua_ls", "ts_ls", "gopls", "clangd", "jsonls", "hyprls" },
       automatic_enable = true,
 
       handlers = {
